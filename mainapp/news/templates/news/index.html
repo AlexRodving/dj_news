@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        {% if news %}
+        {% for inew in news %}
+            <div class="card">
+                <h3>{{ inew.title }}</h3><br>
+                <div class="text_post">
+                    <img src="{{ inew.src }}">
+                    <p>{{ inew.anons }}</p>
+                    <a href="">Читать далее</a>
+                </div><br>
+                <p>Автор: {{ inew.author }}</p><br>
+                <p>Жанр: {{ inew.genre }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Новостей нет!</p>
+    {% endif %}
+    </main>
+</body>
+</html>
